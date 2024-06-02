@@ -1,37 +1,52 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Center content */
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #282c34; /* Adjust background color */
-  min-height: 10vh; /* Adjust header height */
+  background-color: #7e8daa;
+  min-height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: rgb(255, 255, 255);
+}
+
+.App-header nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.App-header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.App-header button {  
+  background-color: transparent;
   color: white;
+  border: none;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;      
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/* Link styling */
-.App-link {
-  color: #61dafb; /* Adjust link color */
-  font-size: 18px; /* Adjust font size */
-  text-decoration: none; /* Remove default underline */
+.App-header button:hover {
+  background-color: #5c6d82;
 }
 
-.App-link:hover {
-  text-decoration: underline; /* Add underline on hover */
-}
-
-/* Active tab styling */
-.active {
-  font-weight: bold; /* Adjust font weight or any other styling */
+.App-header button.active {
+  background-color: #455269;
+  font-weight: bold;
 }
