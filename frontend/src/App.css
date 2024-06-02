@@ -1,0 +1,37 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center content */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34; /* Adjust background color */
+  min-height: 10vh; /* Adjust header height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Link styling */
+.App-link {
+  color: #61dafb; /* Adjust link color */
+  font-size: 18px; /* Adjust font size */
+  text-decoration: none; /* Remove default underline */
+}
+
+.App-link:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Active tab styling */
+.active {
+  font-weight: bold; /* Adjust font weight or any other styling */
+}
