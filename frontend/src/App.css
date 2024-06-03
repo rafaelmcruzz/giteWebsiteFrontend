@@ -9,25 +9,45 @@
 }
 
 .App-header {
-  background-color: #7e8daa;
+  background-color: #B2A492;
   min-height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: rgb(255, 255, 255);
+}
+
+.App-header .logo-container {
+  margin-right: auto;
+  padding: 10px;
+}
+
+.App-header .logo {
+  max-width: 200px;
+  height: auto;
+}
+
+/*So media fits the smaller screens*/
+@media (max-width: 768px) {
+  .App-header .logo {
+    max-width: 120px;
+  }
 }
 
 .App-header nav {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .App-header ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
 }
+
 
 .App-header button {  
   background-color: transparent;
@@ -43,10 +63,10 @@
 }
 
 .App-header button:hover {
-  background-color: #5c6d82;
+  background-color: #7A899C;
 }
 
 .App-header button.active {
-  background-color: #455269;
+  background-color: #6D798C;
   font-weight: bold;
 }

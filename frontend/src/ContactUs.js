@@ -28,7 +28,7 @@ function ContactUs() {
       <h2>GET IN TOUCH</h2>
 
       <div className="contact-details">
-        <div className="contact-detail">
+        {/* <div className="contact-detail">
           <i className="fas fa-map-marker-alt"></i> 
           <h3>ADDRESS</h3>
           <p>Petite Maison au coin<br />24410 Festalemps, France</p>
@@ -38,12 +38,12 @@ function ContactUs() {
           <i className="fas fa-phone"></i>
           <h3>PHONE</h3>
           <p>123456789</p>
-        </div>
+        </div> */}
 
         <div className="contact-detail">
           <i className="fas fa-envelope"></i>
           <h3>EMAIL</h3>
-          <p>@gmail.com</p>
+          <p>petitemaisonaucoin@gmail.com</p>
         </div>
       </div>
 
