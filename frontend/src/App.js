@@ -5,7 +5,7 @@ import About from './About';
 import Gallery from './Gallery';
 import Reviews from './Reviews';
 import ContactUs from './ContactUs';
-import logo from './brotherLogo.png'; 
+import logo from './finalLogo.png'; 
 
 function App() {
   const navigate = useNavigate();
