@@ -125,8 +125,10 @@ function Gallery() {
   ];
 
   return (
-    <div className="gallery-container">  
-      <ImageGallery items={images} showFullscreenButton={false}/> 
+    <div className="gallery-page">
+      <div className="gallery-container">  
+        <ImageGallery items={images} showFullscreenButton={false}/> 
+      </div>
     </div>
   );
 }

@@ -33,7 +33,7 @@ function Reviews() {
 
   return (
     <section className="reviews-section">
-      <h2>Read what our customers say</h2>
+      <h2>Read what our customers say!</h2>
       <div className="reviews-grid">
         {reviews.map((review, index) => (
           <Review key={index} {...review} />
