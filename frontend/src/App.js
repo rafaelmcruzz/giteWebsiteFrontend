@@ -4,6 +4,7 @@ import './App.css';
 import About from './About';
 import Gallery from './Gallery';
 import Reviews from './Reviews';
+import Facilities from './Facilities';
 import ContactUs from './ContactUs';
 import logo from './finalLogo.png'; 
 
@@ -36,6 +37,11 @@ function App() {
               </button>
             </li>
             <li>
+              <button className={activeSection === 'facilities' ? 'active' : ''} onClick={() => { navigate('/facilities'); setActiveSection('facilities'); }}>
+                Facilities
+              </button>
+            </li>
+            <li>
               <button className={activeSection === 'gallery' ? 'active' : ''} onClick={() => { navigate('/gallery'); setActiveSection('gallery'); }}>
                 Gallery
               </button>
@@ -58,6 +64,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to={`/${activeSection}`} />} />
           <Route path="/about" element={<About />} />
+          <Route path="/facilities" element={<Facilities />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/contactus" element={<ContactUs />} />

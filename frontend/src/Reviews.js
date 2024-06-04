@@ -14,7 +14,7 @@ function Review({ quote, author, title }) {
             <i>
               <b>{title}</b>
             </i>
-          </p> 
+          </p>
         </div>
       </div>
     </div>
