@@ -1,8 +1,10 @@
 import React from 'react';
 import './Reviews.css';
 import profilePic from './defaultpfp.jpg';
+import { useTranslation } from 'react-i18next';
 
 function Review({ quote, author, title }) {
+
   return (
     <div className="review-block">
       <p className="quote"><i>❝ {quote}</i></p>
@@ -22,18 +24,21 @@ function Review({ quote, author, title }) {
 }
 
 function Reviews() {
+
+  const { t } = useTranslation();
+
   const reviews = [
-    { quote: "Charming establishment with discreet and charming hosts, too. We really liked it. I recommend it.", author: "Michelle", title: "Exceptional" },
-    { quote: "Very nice house, cozy. Great grounds much appreciated by all, specially by our little ones. Hosts really very nice, very discreet.", author: "Lae", title: "Little Gem!" },
-    { quote: "We were there for a few days but we really liked it. Nice environment too. Delicious food. Fine spacious holiday home with a fantastic garden for the dog.", author: "Robert", title: "Very friendly welcome and very helpful" },
-    { quote: "The owners are very friendly and welcoming, available at any moment.", author: "Janick", title: "Very Pleasant Stay!" },
-    { quote: "Lewis and Nelson are great hosts who go out of their way to make sure that we feel at home the best. We will keep a wonderful memory of our stay at home and will return with great pleasure.", author: "Sophie", title: "A little piece of paradise!" },
-    { quote: "Very good!", author: "Veronique", title: "Very good" },
+    { quote: t("review1"), author: t("author1"), title: t("title1") },
+    { quote: t("review2"), author: t("author2"), title: t("title2") },
+    { quote: t("review3"), author: t("author3"), title: t("title3") },
+    { quote: t("review4"), author: t("author4"), title: t("title4") },
+    { quote: t("review5"), author: t("author5"), title: t("title5") },
+    { quote: t("review6"), author: t("author6"), title: t("title6") },
   ];
 
   return (
     <section className="reviews-section">
-      <h2>Read what our customers say!</h2>
+      <h2>{t('readReviews')}</h2>
       <div className="reviews-grid">
         {reviews.map((review, index) => (
           <Review key={index} {...review} />

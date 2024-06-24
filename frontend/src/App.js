@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './App.css';
 import About from './About';
 import Gallery from './Gallery';
@@ -23,38 +24,63 @@ function App() {
     navigate(`/${activeSection}`);
   }, [activeSection, navigate]);
 
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setIsDropdownOpen(false);
+  };
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <nav>
           <div className="logo-container">
-            <img src={logo} alt="Your Company Logo" className="logo" /> 
+            <img src={logo} alt="logoooo" className="logo" /> 
           </div>
           <ul className="nav-list">
             <li>
               <button className={activeSection === 'about' ? 'active' : ''} onClick={() => { navigate('/about'); setActiveSection('about'); }}>
-                About
+                {t('about')}
               </button>
             </li>
             <li>
               <button className={activeSection === 'facilities' ? 'active' : ''} onClick={() => { navigate('/facilities'); setActiveSection('facilities'); }}>
-                Facilities
+                {t('facilities')}
               </button>
             </li>
             <li>
               <button className={activeSection === 'gallery' ? 'active' : ''} onClick={() => { navigate('/gallery'); setActiveSection('gallery'); }}>
-                Gallery
+                {t('gallery')}
               </button>
             </li>
             <li>
               <button className={activeSection === 'reviews' ? 'active' : ''} onClick={() => { navigate('/reviews'); setActiveSection('reviews'); }}>
-                Reviews
+                {t('reviews')}
               </button>
             </li>
             <li>
               <button className={activeSection === 'contactus' ? 'active' : ''} onClick={() => { navigate('/contactus'); setActiveSection('contactus'); }}>
-                Contact Us
+                {t('contactus')}
               </button>
+            </li>
+            <li className="dropdown-container">
+              <button onClick={toggleDropdown} className="dropdown-toggle">
+                {t('language')}
+              </button>
+              {isDropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li><button onClick={() => changeLanguage('en')}>English</button></li>
+                  <li><button onClick={() => changeLanguage('fr')}>Français</button></li>
+                  <li><button onClick={() => changeLanguage('nl')}>Nederlands</button></li>
+                </ul>
+              )}
             </li>
           </ul>
         </nav>

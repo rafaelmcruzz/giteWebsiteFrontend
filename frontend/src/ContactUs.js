@@ -1,10 +1,12 @@
 import React, {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
 import './ContactUs.css';
+import { useTranslation } from 'react-i18next';
 
 function ContactUs() {
 
     const form = useRef();
+    const { t } = useTranslation();
     const [submissionStatus, setSubmissionStatus] = useState(null);
 
     const sendEmail = (e) => {
@@ -25,21 +27,9 @@ function ContactUs() {
     
   return (
     <section className="contact-section">
-      <h2>GET IN TOUCH</h2>
+      <h2>{t('getInTouch')}</h2>
 
       <div className="contact-details">
-        {/* <div className="contact-detail">
-          <i className="fas fa-map-marker-alt"></i> 
-          <h3>ADDRESS</h3>
-          <p>Petite Maison au coin<br />24410 Festalemps, France</p>
-        </div>
-
-        <div className="contact-detail">
-          <i className="fas fa-phone"></i>
-          <h3>PHONE</h3>
-          <p>123456789</p>
-        </div> */}
-
         <div className="contact-detail">
           <i className="fas fa-envelope"></i>
           <h3>EMAIL</h3>
@@ -48,9 +38,9 @@ function ContactUs() {
       </div>
 
       <div className="message-us-section">
-        <h2>Message Us</h2>
+        <h2>{t('messageUs')}</h2>
         <p>
-          If you wish to contact us directly, please fill in the information below!
+          {t('directContact')}
         </p>
 
         <form ref={form} onSubmit={sendEmail} className="message-form">
@@ -66,10 +56,10 @@ function ContactUs() {
           <button type="submit">SUBMIT</button>
 
           {submissionStatus === 'success' && (
-          <p className="success-message">Email sent successfully!</p>
+          <p className="success-message">{t('successMessage')}</p>
             )}
             {submissionStatus === 'error' && (
-            <p className="error-message">There was an error sending your email. Please try again later.</p>
+            <p className="error-message">{t('errorMessage')}</p>
             )}
         </form>
       </div>

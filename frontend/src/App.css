@@ -70,3 +70,48 @@
   background-color: #6D798C;
   font-weight: bold;
 }
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-menu button:hover {
+  background-color: #eee;
+}
