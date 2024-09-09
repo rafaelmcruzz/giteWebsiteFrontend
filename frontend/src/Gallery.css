@@ -50,13 +50,31 @@
 
 @media (max-width: 768px) {
     .image-gallery-thumbnail img {
-    width: 150px; /* tablets for later */
+        width: 150px; /* tablets for later */
+    }
+
+    .gallery-container{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-0%);
+        transition: height 0.3s;
     }
 }
 
 @media (max-width: 480px) {
     .image-gallery-thumbnail img {
-      width: 100px;  /*mobiles for later */
+        width: 100px;
+    }
+
+    .gallery-container{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-0%);
+        transition: height 0.3s;
     }
 }
   

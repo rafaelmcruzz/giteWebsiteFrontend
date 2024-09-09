@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './App.css';
@@ -25,17 +25,32 @@ function App() {
   }, [activeSection, navigate]);
 
   const { t, i18n } = useTranslation();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setIsDropdownOpen(false);
   };
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   }
+
+  //closes the drop down language menu if user presses/clicks another place
+  useEffect(() => {
+    
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <div className="App">
@@ -70,7 +85,7 @@ function App() {
                 {t('contactus')}
               </button>
             </li>
-            <li className="dropdown-container">
+            <li className="dropdown-container" ref={dropdownRef}>
               <button onClick={toggleDropdown} className="dropdown-toggle">
                 {t('language')}
               </button>
