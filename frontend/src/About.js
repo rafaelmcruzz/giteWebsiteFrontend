@@ -6,14 +6,19 @@ function About() {
 
   const { t } = useTranslation();
 
+  const aboutText = t("aboutText");
+
   return (
     <section className="about-section"> 
       <div className="text-overlay">
         <h1>{t("aboutus")}</h1>
-        <p>
-          {t("aboutText")}
-        </p>
+        {aboutText.split('\n\n').map((paragraph, index) => (
+          <div key={index}>
+            <p>{paragraph}</p>
+            {index < aboutText.split('\n\n').length - 1 && <hr className="separator" />}
       </div>
+      ))}
+     </div>
     </section>
   );
 }
